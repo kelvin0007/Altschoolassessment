@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container bg-white p-6 rounded-xl shadow-lg w-full max-w-sm">
+        <div class="display mb-4">
+            <div id="previous-operand" class="previous-operand"></div>
+            <div id="current-operand" class="current-operand">0</div>
+        </div>
+
+        <div class="calculator-grid">
+            <button class="calculator-button clear-button" data-action="clear">C</button>
+            <button class="calculator-button operator-button" data-operator="/">&divide;</button>
+            <button class="calculator-button operator-button" data-operator="*">&times;</button>
+            <button class="calculator-button backspace-button" data-action="backspace">&larr;</button>
+
+            <button class="calculator-button number-button" data-number="7">7</button>
+            <button class="calculator-button number-button" data-number="8">8</button>
+            <button class="calculator-button number-button" data-number="9">9</button>
+            <button class="calculator-button operator-button" data-operator="-">-</button>
+
+            <button class="calculator-button number-button" data-number="4">4</button>
+            <button class="calculator-button number-button" data-number="5">5</button>
+            <button class="calculator-button number-button" data-number="6">6</button>
+            <button class="calculator-button operator-button" data-operator="+">+</button>
+
+            <button class="calculator-button number-button" data-number="1">1</button>
+            <button class="calculator-button number-button" data-number="2">2</button>
+            <button class="calculator-button number-button" data-number="3">3</button>
+            <button class="calculator-button equals-button" data-action="equals">=</button>
+
+            <button class="calculator-button number-button" data-number="0">0</button>
+            <button class="calculator-button decimal-button" data-number=".">.</button>
+        </div>
+    </div>
+
+    <div id="history" class="history-section w-full max-w-sm mt-4">
+        <h2 class="text-lg font-semibold mb-2">Calculation History</h2>
+        <div id="history-list">
+            <!-- History items will be dynamically added here -->
+            <p class="text-gray-500 text-center" id="no-history-message">No history yet.</p>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

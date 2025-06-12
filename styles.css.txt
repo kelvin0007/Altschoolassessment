@@ -1,0 +1,157 @@
+/* Custom styles for the calculator */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5; /* Light gray background */
+    display: flex;
+    flex-direction: column; /* Allows content to stack vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full viewport height */
+    margin: 0;
+    padding: 20px; /* Add some padding around the content */
+    box-sizing: border-box;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 10px; /* Space between buttons */
+}
+
+.calculator-button {
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 12px; /* More rounded corners */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none; /* Prevent text selection on buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.calculator-button:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.calculator-button:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.operator-button {
+    background-color: #8c82eb; /* Purple for operators */
+    color: white;
+}
+
+.operator-button:hover {
+    background-color: #7a6ce0;
+}
+
+.equals-button {
+    background-color: #4CAF50; /* Green for equals */
+    color: white;
+    grid-column: span 2; /* Make equals button span two columns */
+}
+
+.equals-button:hover {
+    background-color: #45a049;
+}
+
+.clear-button, .backspace-button {
+    background-color: #FF5722; /* Red for clear/backspace */
+    color: white;
+}
+
+.clear-button:hover, .backspace-button:hover {
+    background-color: #e64a19;
+}
+
+.number-button, .decimal-button {
+    background-color: #ffffff; /* White for numbers */
+    color: #333;
+}
+
+.number-button:hover, .decimal-button:hover {
+    background-color: #f0f0f0;
+}
+
+.display {
+    background-color: #333;
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: right;
+    font-size: 2.5rem; /* Larger font for main display */
+    word-wrap: break-word; /* Allow long results to wrap */
+    min-height: 80px; /* Ensure display area has a minimum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Hide overflow for history */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Inset shadow for display */
+}
+
+.previous-operand {
+    font-size: 1.2rem;
+    color: #ccc;
+    min-height: 25px; /* Ensure space for previous operand */
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.history-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    max-height: 200px; /* Limit history height */
+    overflow-y: auto; /* Enable scrolling for history */
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.history-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-expression {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.history-result {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .calculator-container {
+        width: 95%; /* Even smaller width on very small screens */
+    }
+    .calculator-button {
+        padding: 15px; /* Slightly less padding on smaller screens */
+        font-size: 1.2rem;
+    }
+    .display {
+        font-size: 2rem;
+    }
+    .previous-operand {
+        font-size: 1rem;
+    }
+}
